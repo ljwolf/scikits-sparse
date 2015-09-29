@@ -40,7 +40,7 @@ import numpy as np
 
 if __name__ == "__main__":
     setup(install_requires = ['numpy', 'scipy'],
-          namespace_packages = ['scikits'],
+          namespace_packages = ['sksparse'],
           packages = find_packages(),
           package_data = {
               "": ["test_data/*.mtx.gz"],
@@ -68,8 +68,8 @@ if __name__ == "__main__":
               'Topic :: Scientific/Engineering'],
           cmdclass = {"build_ext": build_ext},
           ext_modules = [
-              Extension("scikits.sparse.cholmod",
-                        ["scikits/sparse/cholmod.pyx"],
+              Extension("sksparse.cholmod",
+                        ["sksparse/cholmod.pyx"],
                         libraries=["cholmod"],
                         include_dirs=[np.get_include()],
                         # If your CHOLMOD is in a funny place, you may need to
